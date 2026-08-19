@@ -200,6 +200,18 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2067713504182697984/xG9JHwPk_400x400.jpg",
     tweetUrl: "https://x.com/FullRetardRadar/status/2074418780726292717"
   },
+  // ===== NEW TWEET (added to C) =====
+  {
+    id: "1682023053247778818",
+    author: "Catch Up",
+    handle: "@CatchUpFeed",
+    content: "Policing in Britain just isn’t what it used to be.",
+    likes: 100,
+    reposts: 23,
+    views: 27784,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1559650300964872194/8NKDFstI_400x400.png",
+    tweetUrl: "https://x.com/CatchUpFeed/status/1682023053247778818"
+  },
 
   // ===== D - Two Tier Policing =====
   {
@@ -312,9 +324,9 @@ const defaultTier: Record<string, Tweet[]> = {
   S: [initialTweets[0], initialTweets[1], initialTweets[2]],
   A: [initialTweets[3], initialTweets[4], initialTweets[5], initialTweets[6], initialTweets[7]],
   B: [initialTweets[8], initialTweets[9], initialTweets[10], initialTweets[11], initialTweets[12]],
-  C: [initialTweets[13], initialTweets[14], initialTweets[15]],
-  D: [initialTweets[16], initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20]],
-  E: [initialTweets[21], initialTweets[22], initialTweets[23], initialTweets[24]],
+  C: [initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16]], // now includes the new tweet
+  D: [initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20], initialTweets[21]],
+  E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25]],
   DISCARD: [],
 };
 
@@ -849,7 +861,6 @@ function TierListApp() {
   );
 }
 
-// This is the key fix – wrap the component that uses useSearchParams in Suspense
 export default function Page() {
   return (
     <Suspense fallback={
