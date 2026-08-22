@@ -200,7 +200,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2067713504182697984/xG9JHwPk_400x400.jpg",
     tweetUrl: "https://x.com/FullRetardRadar/status/2074418780726292717"
   },
-  // ===== NEW TWEET (added to C) =====
   {
     id: "1682023053247778818",
     author: "Catch Up",
@@ -315,6 +314,32 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
     tweetUrl: "https://x.com/RareAxies/status/2086139748607836477"
   },
+
+  // ===== NEW: DEI =====
+  {
+    id: "2091138597143388377",
+    author: "RareAxies",
+    handle: "@RareAxies",
+    content: "In Birmingham, Police responded to reports of antisocial behaviour by:\n\n- sending a lone female\n- who was too scared to get out of her van\n- but did make it known she was recording\n\nThank-you DEI for making this possible 🤦‍♂️",
+    likes: 1626,
+    reposts: 305,
+    views: 111244,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
+    tweetUrl: "https://x.com/RareAxies/status/2091138597143388377"
+  },
+
+  // ===== NEW: Failed Arrest =====
+  {
+    id: "2090523016262283657",
+    author: "RareAxies",
+    handle: "@RareAxies",
+    content: "A couple of crackheads - adult men on pushbikes with drawstring bags from JD sports - evade capture from local police.\n\nAm I alone in feeling for the officer who face plants?\n\nHis colleagues - the DEI female and a dude who runs like crusty the clown - are nowhere to be seen 🐌",
+    likes: 8,
+    reposts: 0,
+    views: 7070,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
+    tweetUrl: "https://x.com/RareAxies/status/2090523016262283657"
+  },
 ];
 
 const tiers = ['S', 'A', 'B', 'C', 'D', 'E'];
@@ -324,9 +349,9 @@ const defaultTier: Record<string, Tweet[]> = {
   S: [initialTweets[0], initialTweets[1], initialTweets[2]],
   A: [initialTweets[3], initialTweets[4], initialTweets[5], initialTweets[6], initialTweets[7]],
   B: [initialTweets[8], initialTweets[9], initialTweets[10], initialTweets[11], initialTweets[12]],
-  C: [initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16]], // now includes the new tweet
+  C: [initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16], initialTweets[27]],
   D: [initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20], initialTweets[21]],
-  E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25]],
+  E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25], initialTweets[26]],
   DISCARD: [],
 };
 
@@ -809,7 +834,6 @@ function TierListApp() {
         </div>
       </div>
 
-      {/* Clean download version */}
       <div className="fixed -left-[9999px] top-0">
         <div ref={cleanRef} className="bg-black p-8 w-[900px]">
           <div className="text-center mb-8">
