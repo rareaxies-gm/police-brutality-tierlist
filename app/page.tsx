@@ -314,8 +314,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
     tweetUrl: "https://x.com/RareAxies/status/2086139748607836477"
   },
-
-  // ===== NEW: DEI =====
   {
     id: "2091138597143388377",
     author: "RareAxies",
@@ -328,7 +326,7 @@ const initialTweets: Tweet[] = [
     tweetUrl: "https://x.com/RareAxies/status/2091138597143388377"
   },
 
-  // ===== NEW: Failed Arrest =====
+  // ===== extra C tweet =====
   {
     id: "2090523016262283657",
     author: "RareAxies",
@@ -824,12 +822,12 @@ function TierListApp() {
         <div className="text-center mt-12 pb-6 text-gray-400 text-sm">
           Questions —{' '}
           <a
-            href="https://x.com/RareAxies"
+            href="https://x.com/RareRestore"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline"
           >
-            DM @RareAxies
+            DM @RareRestore
           </a>
         </div>
       </div>
@@ -877,7 +875,7 @@ function TierListApp() {
 
           <div className="text-center mt-10 text-gray-500 text-sm space-y-1">
             <div>Make your own → bit.ly/UK-Police-On-X (case sensitive)</div>
-            <div>Questions — DM @RareAxies on X</div>
+            <div>Questions — DM @RareRestore on X</div>
           </div>
         </div>
       </div>
