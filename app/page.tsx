@@ -325,8 +325,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
     tweetUrl: "https://x.com/RareAxies/status/2091138597143388377"
   },
-
-  // ===== extra C tweet =====
   {
     id: "2090523016262283657",
     author: "RareAxies",
@@ -338,6 +336,129 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
     tweetUrl: "https://x.com/RareAxies/status/2090523016262283657"
   },
+
+  // ===== NEW (sheet rows 30-40) =====
+  {
+    id: "2098877732213997734",
+    author: "Jonathan Wong",
+    handle: "@WONGthink",
+    content: "Portsmouth protest. One event. Two sides. Two-tier policing.",
+    likes: 635,
+    reposts: 157,
+    views: 37800,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2082898152483393536/vQ2l0IIH_400x400.jpg",
+    tweetUrl: "https://x.com/WONGthink/status/2098877732213997734"
+  },
+  {
+    id: "2098766830630252816",
+    author: "Rare | ♻️🇬🇧",
+    handle: "@RareRestore",
+    content: "This lot couldn't put a child on a naughty step.",
+    likes: 718,
+    reposts: 64,
+    views: 250700,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
+    tweetUrl: "https://x.com/RareRestore/status/2098766830630252816"
+  },
+  {
+    id: "2097813829119877624",
+    author: "The media SOI",
+    handle: "@MediaSOI",
+    content: "Is this acceptable police conduct?",
+    likes: 680,
+    reposts: 280,
+    views: 73700,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2074137677620768768/yeoj3BGI_400x400.jpg",
+    tweetUrl: "https://x.com/MediaSOI/status/2097813829119877624"
+  },
+  {
+    id: "2097408698175873364",
+    author: "John Spandli",
+    handle: "@BentexTv",
+    content: "Friendly fire 🤣",
+    likes: 569,
+    reposts: 147,
+    views: 79800,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1882229488697610240/nNRgaq78_400x400.jpg",
+    tweetUrl: "https://x.com/BentexTv/status/2097408698175873364"
+  },
+  {
+    id: "2086537720223199233",
+    author: "WesleyWinter",
+    handle: "@WesleyWinterYT",
+    content: "A Polish mother was arrested after refusing to leave her 13 year old son unattended with a police officer in Liverpool.",
+    likes: 40000,
+    reposts: 10000,
+    views: 1800000,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1819197190864060417/0P2I69lm_400x400.jpg",
+    tweetUrl: "https://x.com/WesleyWinterYT/status/2086537720223199233"
+  },
+  {
+    id: "2093794458387255557",
+    author: "British Patriot 🇬🇧",
+    handle: "@EnglandUK",
+    content: "Badge doesn’t make you the main character.",
+    likes: 2500,
+    reposts: 632,
+    views: 222222,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2088949132018720768/DcK2hTa-_400x400.jpg",
+    tweetUrl: "https://x.com/EnglandUK/status/2093794458387255557"
+  },
+  {
+    id: "2094138273782243392",
+    author: "My Brakes Don't Work",
+    handle: "@mybrakedontwork",
+    content: "Two Tier Police let antifa go",
+    likes: 2100,
+    reposts: 640,
+    views: 506300,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2093719899071709184/23t7VIWF_400x400.jpg",
+    tweetUrl: "https://x.com/mybrakedontwork/status/2094138273782243392"
+  },
+  {
+    id: "2095114078167441768",
+    author: "Driftwood",
+    handle: "@buc97552",
+    content: "Six Hertfordshire police officers deployed over a WhatsApp group chat",
+    likes: 833,
+    reposts: 322,
+    views: 51500,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2033994598561759233/uyHgffAk_400x400.jpg",
+    tweetUrl: "https://x.com/buc97552/status/2095114078167441768"
+  },
+  {
+    id: "2095659742236708973",
+    author: "Retard Finder",
+    handle: "@IfindRetards",
+    content: "A man in the UK was tackled to the ground and arrested for calling a cop a \"clown\"",
+    likes: 15000,
+    reposts: 2200,
+    views: 466100,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2005562609798725632/FV0GDw3C_400x400.jpg",
+    tweetUrl: "https://x.com/IfindRetards/status/2095659742236708973"
+  },
+  {
+    id: "2096248868987924590",
+    author: "The Nationalist GB",
+    handle: "@TheNatGB",
+    content: "Meanwhile, in Croydon.",
+    likes: 960,
+    reposts: 198,
+    views: 82800,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2096182302208663552/NUTN79Cq_400x400.jpg",
+    tweetUrl: "https://x.com/TheNatGB/status/2096248868987924590"
+  },
+  {
+    id: "2096530896933269653",
+    author: "The British Patriot",
+    handle: "@TheBritLad",
+    content: "This is police brutality.",
+    likes: 896,
+    reposts: 386,
+    views: 44900,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2034218560768385024/nxbIRriv_400x400.jpg",
+    tweetUrl: "https://x.com/TheBritLad/status/2096530896933269653"
+  },
 ];
 
 const tiers = ['S', 'A', 'B', 'C', 'D', 'E'];
@@ -345,10 +466,22 @@ const allTiers = [...tiers, 'DISCARD'];
 
 const defaultTier: Record<string, Tweet[]> = {
   S: [initialTweets[0], initialTweets[1], initialTweets[2]],
-  A: [initialTweets[3], initialTweets[4], initialTweets[5], initialTweets[6], initialTweets[7]],
-  B: [initialTweets[8], initialTweets[9], initialTweets[10], initialTweets[11], initialTweets[12]],
-  C: [initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16], initialTweets[27]],
-  D: [initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20], initialTweets[21]],
+  A: [
+    initialTweets[3], initialTweets[4], initialTweets[5], initialTweets[6], initialTweets[7],
+    initialTweets[30], initialTweets[32], initialTweets[38],
+  ],
+  B: [
+    initialTweets[8], initialTweets[9], initialTweets[10], initialTweets[11], initialTweets[12],
+    initialTweets[33], initialTweets[35], initialTweets[36],
+  ],
+  C: [
+    initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16], initialTweets[27],
+    initialTweets[29], initialTweets[31],
+  ],
+  D: [
+    initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20], initialTweets[21],
+    initialTweets[28], initialTweets[34], initialTweets[37],
+  ],
   E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25], initialTweets[26]],
   DISCARD: [],
 };
