@@ -1,9 +1,7 @@
 'use client';
-
 import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { toPng } from 'html-to-image';
 import { useSearchParams, useRouter } from 'next/navigation';
-
 interface Tweet {
   id: string;
   author: string;
@@ -15,7 +13,6 @@ interface Tweet {
   avatarUrl: string;
   tweetUrl: string;
 }
-
 const initialTweets: Tweet[] = [
   // ===== S - Anti-white Racism =====
   {
@@ -51,7 +48,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2007262159403671552/-DltTmcT_400x400.jpg",
     tweetUrl: "https://x.com/TRobinsonNewEra/status/2076630838658146406"
   },
-
   // ===== A - Violent Policing =====
   {
     id: "2063310379904577880",
@@ -108,7 +104,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/1704571042524491776/ieHPB868_400x400.jpg",
     tweetUrl: "https://x.com/TPointUK/status/2063641296489599358"
   },
-
   // ===== B - Thought Police =====
   {
     id: "2073427211898556481",
@@ -165,7 +160,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2074137677620768768/yeoj3BGI_400x400.jpg",
     tweetUrl: "https://x.com/MediaSOI/status/2078216763024535716"
   },
-
   // ===== C - Failed Arrest =====
   {
     id: "2082148843500523718",
@@ -211,7 +205,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/1559650300964872194/8NKDFstI_400x400.png",
     tweetUrl: "https://x.com/CatchUpFeed/status/1682023053247778818"
   },
-
   // ===== D - Two Tier Policing =====
   {
     id: "2075470278621065366",
@@ -268,7 +261,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/1904501834577780736/vP2Ual4q_400x400.jpg",
     tweetUrl: "https://x.com/BritLadx/status/2086203543623455106"
   },
-
   // ===== E - DEI hires =====
   {
     id: "2073755447719248065",
@@ -336,7 +328,6 @@ const initialTweets: Tweet[] = [
     avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
     tweetUrl: "https://x.com/RareAxies/status/2090523016262283657"
   },
-
   // ===== NEW (sheet rows 30-40) =====
   {
     id: "2098877732213997734",
@@ -460,10 +451,8 @@ const initialTweets: Tweet[] = [
     tweetUrl: "https://x.com/TheBritLad/status/2096530896933269653"
   },
 ];
-
-const tiers = ['S', 'A', 'B', 'C', 'D', 'E'];
+const tiers = ['S', 'A', 'B', 'C', 'D', 'E', 'P'];
 const allTiers = [...tiers, 'DISCARD'];
-
 const defaultTier: Record<string, Tweet[]> = {
   S: [initialTweets[0], initialTweets[1], initialTweets[2]],
   A: [
@@ -483,9 +472,9 @@ const defaultTier: Record<string, Tweet[]> = {
     initialTweets[28], initialTweets[34], initialTweets[37],
   ],
   E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25], initialTweets[26]],
+  P: [],
   DISCARD: [],
 };
-
 const defaultTitles: Record<string, string> = {
   S: 'Anti-white Racism',
   A: 'Violent Policing',
@@ -493,9 +482,9 @@ const defaultTitles: Record<string, string> = {
   C: 'Failed Arrest',
   D: 'Two Tier Policing',
   E: 'DEI hires',
+  P: 'Proper Policing',
   DISCARD: 'Discard Pile',
 };
-
 const tierStyles: Record<string, string> = {
   S: 'bg-red-950/40 border-red-600',
   A: 'bg-orange-950/40 border-orange-500',
@@ -503,9 +492,9 @@ const tierStyles: Record<string, string> = {
   C: 'bg-green-950/30 border-green-500',
   D: 'bg-blue-950/30 border-blue-500',
   E: 'bg-purple-950/30 border-purple-500',
+  P: 'bg-pink-950/30 border-pink-500',
   DISCARD: 'bg-gray-900/60 border-gray-500',
 };
-
 const tierColors: Record<string, string> = {
   S: '#dc2626',
   A: '#f97316',
@@ -513,9 +502,9 @@ const tierColors: Record<string, string> = {
   C: '#22c55e',
   D: '#3b82f6',
   E: '#a855f7',
+  P: '#ec4899',
   DISCARD: '#6b7280',
 };
-
 function encodeState(tierLists: Record<string, Tweet[]>, tierTitles: Record<string, string>) {
   const payload = {
     t: Object.fromEntries(
@@ -525,19 +514,16 @@ function encodeState(tierLists: Record<string, Tweet[]>, tierTitles: Record<stri
   };
   return btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
 }
-
 function decodeState(encoded: string): { tierLists: Record<string, Tweet[]>; tierTitles: Record<string, string> } | null {
   try {
     const payload = JSON.parse(decodeURIComponent(escape(atob(encoded))));
     const newLists: Record<string, Tweet[]> = { DISCARD: [] };
-
     for (const tier of tiers) {
       const ids: string[] = payload.t[tier] || [];
       newLists[tier] = ids
         .map(id => initialTweets.find(t => t.id === id))
         .filter(Boolean) as Tweet[];
     }
-
     return {
       tierLists: newLists,
       tierTitles: { ...defaultTitles, ...payload.titles },
@@ -546,11 +532,9 @@ function decodeState(encoded: string): { tierLists: Record<string, Tweet[]>; tie
     return null;
   }
 }
-
 function TierListApp() {
   const searchParams = useSearchParams();
   const router = useRouter();
-
   const [tierLists, setTierLists] = useState<Record<string, Tweet[]>>(defaultTier);
   const [tierTitles, setTierTitles] = useState<Record<string, string>>(defaultTitles);
   const [isEditing, setIsEditing] = useState(false);
@@ -559,11 +543,9 @@ function TierListApp() {
   const [isDragging, setIsDragging] = useState(false);
   const [isShared, setIsShared] = useState(false);
   const [shareMessage, setShareMessage] = useState<string | null>(null);
-
   const scrollRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const cleanRef = useRef<HTMLDivElement>(null);
   const scrollInterval = useRef<ReturnType<typeof setInterval> | null>(null);
-
   useEffect(() => {
     const encoded = searchParams.get('s');
     if (encoded) {
@@ -575,7 +557,6 @@ function TierListApp() {
       }
     }
   }, [searchParams]);
-
   useEffect(() => {
     if (!isDragging) {
       if (scrollInterval.current) {
@@ -584,37 +565,30 @@ function TierListApp() {
       }
       return;
     }
-
     const EDGE = 100;
     const SPEED = 12;
-
     const handleDragOver = (e: DragEvent) => {
       const y = e.clientY;
       const h = window.innerHeight;
-
       if (scrollInterval.current) {
         clearInterval(scrollInterval.current);
         scrollInterval.current = null;
       }
-
       if (y < EDGE) {
         scrollInterval.current = setInterval(() => window.scrollBy(0, -SPEED), 16);
       } else if (y > h - EDGE) {
         scrollInterval.current = setInterval(() => window.scrollBy(0, SPEED), 16);
       }
     };
-
     const stopScroll = () => {
       if (scrollInterval.current) {
         clearInterval(scrollInterval.current);
         scrollInterval.current = null;
       }
     };
-
     window.addEventListener('dragover', handleDragOver);
     window.addEventListener('dragend', stopScroll);
     window.addEventListener('drop', stopScroll);
-
     return () => {
       window.removeEventListener('dragover', handleDragOver);
       window.removeEventListener('dragend', stopScroll);
@@ -622,22 +596,18 @@ function TierListApp() {
       stopScroll();
     };
   }, [isDragging]);
-
   const onDragStart = (e: React.DragEvent, tweet: Tweet, fromTier: string) => {
     e.dataTransfer.setData('tweet', JSON.stringify(tweet));
     e.dataTransfer.setData('fromTier', fromTier);
     setIsDragging(true);
   };
-
   const onDrop = (e: React.DragEvent, toTier: string) => {
     e.preventDefault();
     setIsDragging(false);
     if (!isEditing) return;
-
     const tweet = JSON.parse(e.dataTransfer.getData('tweet'));
     const fromTier = e.dataTransfer.getData('fromTier');
     if (fromTier === toTier) return;
-
     setTierLists(prev => {
       const newLists = { ...prev };
       newLists[fromTier] = newLists[fromTier].filter(t => t.id !== tweet.id);
@@ -645,13 +615,10 @@ function TierListApp() {
       return newLists;
     });
   };
-
   const onDragOver = (e: React.DragEvent) => {
     if (isEditing) e.preventDefault();
   };
-
   const onDragEnd = () => setIsDragging(false);
-
   const moveToDiscard = (tweet: Tweet, fromTier: string) => {
     if (!isEditing) return;
     setTierLists(prev => {
@@ -661,23 +628,19 @@ function TierListApp() {
       return newLists;
     });
   };
-
   const scroll = (tier: string, direction: 'left' | 'right') => {
     const container = scrollRefs.current[tier];
     if (container) {
       container.scrollBy({ left: direction === 'right' ? 280 : -280, behavior: 'smooth' });
     }
   };
-
   const handleTitleChange = (tier: string, value: string) => {
     setTierTitles(prev => ({ ...prev, [tier]: value }));
   };
-
   const handleToggleEdit = () => {
     setIsEditing(prev => !prev);
     setEditingTier(null);
   };
-
   const handleViewOriginal = () => {
     setTierLists(defaultTier);
     setTierTitles(defaultTitles);
@@ -686,23 +649,19 @@ function TierListApp() {
     setEditingTier(null);
     router.push('/');
   };
-
   const handleShareImage = async () => {
     if (isEditing) {
       setIsEditing(false);
       setEditingTier(null);
     }
-
     if (!cleanRef.current) return;
     setIsDownloading(true);
-
     try {
       const dataUrl = await toPng(cleanRef.current, {
         quality: 1,
         pixelRatio: 2,
         backgroundColor: '#000000',
       });
-
       const link = document.createElement('a');
       link.download = 'uk-police-on-x.png';
       link.href = dataUrl;
@@ -714,7 +673,6 @@ function TierListApp() {
       setIsDownloading(false);
     }
   };
-
   const hasChanges = () => {
     for (const tier of tiers) {
       if (tierTitles[tier] !== defaultTitles[tier]) return true;
@@ -727,17 +685,14 @@ function TierListApp() {
     if (tierLists['DISCARD'].length > 0) return true;
     return false;
   };
-
   const handleShareLink = async () => {
     if (isEditing) {
       setIsEditing(false);
       setEditingTier(null);
     }
-
     const url = hasChanges()
       ? `${window.location.origin}/?s=${encodeState(tierLists, tierTitles)}`
       : 'https://bit.ly/UK-Police-On-X';
-
     try {
       await navigator.clipboard.writeText(url);
       setShareMessage('Link copied to clipboard!');
@@ -746,16 +701,13 @@ function TierListApp() {
       prompt('Copy this link:', url);
     }
   };
-
   const visibleTiers = isEditing ? allTiers : tiers;
-
   return (
     <div className="min-h-screen bg-black text-white p-6 md:p-10 overflow-x-hidden">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-3">🇬🇧 UK Police on X 🇬🇧</h1>
           <p className="text-gray-400 mb-6">👮 YooKay Police doing a madness 👮</p>
-
           <div className="flex justify-center gap-3 flex-wrap">
             <button
               onClick={handleToggleEdit}
@@ -764,7 +716,6 @@ function TierListApp() {
             >
               {isEditing ? 'Finish editing ✅' : 'Edit this list 🔧'}
             </button>
-
             <button
               onClick={handleShareImage}
               disabled={isDownloading}
@@ -777,7 +728,6 @@ function TierListApp() {
                 ? 'Finish and Share 📸'
                 : 'Share 📸'}
             </button>
-
             <button
               onClick={handleShareLink}
               className="px-5 py-3 rounded-xl font-semibold text-white transition-all"
@@ -785,7 +735,6 @@ function TierListApp() {
             >
               {isEditing ? 'Finish and Share 🔗' : 'Share 🔗'}
             </button>
-
             {isShared && (
               <button
                 onClick={handleViewOriginal}
@@ -796,18 +745,15 @@ function TierListApp() {
               </button>
             )}
           </div>
-
           {shareMessage && (
             <p className="mt-4 text-sm text-green-400 font-medium">{shareMessage}</p>
           )}
-
           {isEditing && (
             <p className="mt-4 text-sm text-yellow-400">
               Editing mode — drag cards, click titles to rename, or use ✕ to discard
             </p>
           )}
         </div>
-
         <div className="space-y-5">
           {visibleTiers.map(tier => (
             <div
@@ -822,7 +768,6 @@ function TierListApp() {
                 <div className="text-6xl font-black leading-none w-16 flex-shrink-0 flex items-center justify-center">
                   {tier === 'DISCARD' ? '🗑️' : tier}
                 </div>
-
                 <div className="flex-1 min-w-0">
                   {isEditing && editingTier === tier && tier !== 'DISCARD' ? (
                     <input
@@ -850,7 +795,6 @@ function TierListApp() {
                   )}
                 </div>
               </div>
-
               <div className="relative min-w-0">
                 {tierLists[tier].length > 3 && (
                   <button
@@ -860,7 +804,6 @@ function TierListApp() {
                     ‹
                   </button>
                 )}
-
                 <div
                   ref={(el) => { scrollRefs.current[tier] = el; }}
                   className="flex gap-4 overflow-x-auto scrollbar-hide py-1"
@@ -888,7 +831,6 @@ function TierListApp() {
                           ✕
                         </button>
                       )}
-
                       <div className="flex items-center gap-2 mb-3">
                         <img
                           src={tweet.avatarUrl}
@@ -903,17 +845,14 @@ function TierListApp() {
                           <div className="text-xs text-gray-500 truncate">{tweet.handle}</div>
                         </div>
                       </div>
-
                       <p className="text-sm text-gray-200 line-clamp-3 mb-3 whitespace-pre-line">
                         {tweet.content}
                       </p>
-
                       <img
                         src={`/images/${tweet.id}.png`}
                         alt="Evidence"
                         className="w-full aspect-square object-cover rounded-lg mb-3 bg-gray-800"
                       />
-
                       <div className="flex items-center justify-between text-xs">
                         <div className="flex gap-3 text-gray-500">
                           <span>❤️ {tweet.likes.toLocaleString()}</span>
@@ -931,14 +870,12 @@ function TierListApp() {
                       </div>
                     </div>
                   ))}
-
                   {tierLists[tier].length === 0 && (
                     <div className="text-gray-600 text-sm italic py-8 pl-2">
                       {tier === 'DISCARD' ? 'Discarded cards appear here' : 'Drop cards here'}
                     </div>
                   )}
                 </div>
-
                 {tierLists[tier].length > 3 && (
                   <button
                     onClick={() => scroll(tier, 'right')}
@@ -951,7 +888,6 @@ function TierListApp() {
             </div>
           ))}
         </div>
-
         <div className="text-center mt-12 pb-6 text-gray-400 text-sm">
           Questions —{' '}
           <a
@@ -964,14 +900,12 @@ function TierListApp() {
           </a>
         </div>
       </div>
-
       <div className="fixed -left-[9999px] top-0">
         <div ref={cleanRef} className="bg-black p-8 w-[900px]">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-white">🇬🇧 UK Police on X 🇬🇧</h1>
             <p className="text-gray-400 mt-1">👮 YooKay Police doing a madness 👮</p>
           </div>
-
           <div className="space-y-5">
             {tiers.map(tier => (
               <div key={tier} className="flex items-start gap-3">
@@ -989,7 +923,6 @@ function TierListApp() {
                     {tierTitles[tier]}
                   </div>
                 </div>
-
                 <div className="flex flex-wrap gap-3">
                   {tierLists[tier].map(tweet => (
                     <div key={tweet.id} className="w-24 text-center">
@@ -1005,7 +938,6 @@ function TierListApp() {
               </div>
             ))}
           </div>
-
           <div className="text-center mt-10 text-gray-500 text-sm space-y-1">
             <div>Make your own → bit.ly/UK-Police-On-X (case sensitive)</div>
             <div>Questions — DM @RareRestore on X</div>
@@ -1015,7 +947,6 @@ function TierListApp() {
     </div>
   );
 }
-
 export default function Page() {
   return (
     <Suspense fallback={
