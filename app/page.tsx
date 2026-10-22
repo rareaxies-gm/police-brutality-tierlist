@@ -449,30 +449,188 @@ const initialTweets: Tweet[] = [
     views: 44900,
     avatarUrl: "https://pbs.twimg.com/profile_images/2034218560768385024/nxbIRriv_400x400.jpg",
     tweetUrl: "https://x.com/TheBritLad/status/2096530896933269653"
+  },  // ===== NEW (sheet rows 41-55) =====
+  {
+    id: "2110752884295917766",
+    author: "Concerned Citizen",
+    handle: "@BGatesIsaPyscho",
+    content: "Man in Bury stares at police for 2 seconds and is accosted by officers, having to justify his entire existence.",
+    likes: 2728,
+    reposts: 660,
+    views: 128825,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1534905804368879621/R5xYZeL5_400x400.jpg",
+    tweetUrl: "https://x.com/BGatesIsaPyscho/status/2110752884295917766"
+  },
+  {
+    id: "2110626224955416776",
+    author: "Rare | ♻️🇬🇧",
+    handle: "@RareRestore",
+    content: "Meanwhile, in Dudley, West Midlands Police remove an irritating bystander from the scene of arrest.",
+    likes: 1104,
+    reposts: 107,
+    views: 323114,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2015038970405572608/lbcRtHrS_400x400.jpg",
+    tweetUrl: "https://x.com/RareRestore/status/2110626224955416776"
+  },
+  {
+    id: "2108482972139552920",
+    author: "Oldspeak Bookshop 📚",
+    handle: "@oldspeak_books",
+    content: "A policeman came round my house this morning.\nBecause of a post I didn’t even put up.\nSurely people must have better things to do??",
+    likes: 10647,
+    reposts: 2046,
+    views: 841397,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2082014057314295808/31gdH3KG_400x400.jpg",
+    tweetUrl: "https://x.com/oldspeak_books/status/2108482972139552920"
+  },
+  {
+    id: "2112551367537508483",
+    author: "Tommy Robinson 🇬🇧",
+    handle: "@TRobinsonNewEra",
+    content: "Our young can't even go to college in cities like Coventry anymore because of vile fucks like this carrying weapons.",
+    likes: 40926,
+    reposts: 5942,
+    views: 4234900,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2007262159403671552/-DltTmcT_400x400.jpg",
+    tweetUrl: "https://x.com/TRobinsonNewEra/status/2112551367537508483"
+  },
+  {
+    id: "2096604154282008580",
+    author: "WeGotitBack 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧🇺🇸",
+    handle: "@NotFarLeftAtAll",
+    content: "Police officers refuse to buckle or be intimidated by the racism card.",
+    likes: 4041,
+    reposts: 444,
+    views: 324988,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1889657050629632000/Pxr-VZ9l_400x400.jpg",
+    tweetUrl: "https://x.com/NotFarLeftAtAll/status/2096604154282008580"
+  },
+  {
+    id: "2098943750458195980",
+    author: "Gauci Reports",
+    handle: "@GauciReports",
+    content: "Two-tier policing: anti-migrant protester in a niqab arrested, counter-protester wearing the same ignored.",
+    likes: 4657,
+    reposts: 1895,
+    views: 57180,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1969735649927258112/QOqTtlOO_400x400.jpg",
+    tweetUrl: "https://x.com/GauciReports/status/2098943750458195980"
+  },
+  {
+    id: "2099233404822909433",
+    author: "The White Rabbit",
+    handle: "@TheWyteRabbit1",
+    content: "Uk police quote of the year …”he’s breaking the law so what am I supposed to do “ .",
+    likes: 51064,
+    reposts: 7368,
+    views: 3064999,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2054404587839225857/o-VCrqec_400x400.jpg",
+    tweetUrl: "https://x.com/TheWyteRabbit1/status/2099233404822909433"
+  },
+  {
+    id: "2100877775796150415",
+    author: "HJB News",
+    handle: "@HJB_News__",
+    content: "In the UK they now have children policing the streets.",
+    likes: 3109,
+    reposts: 650,
+    views: 257997,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2006926965429723136/nuuCSsTe_400x400.jpg",
+    tweetUrl: "https://x.com/HJB_News__/status/2100877775796150415"
+  },
+  {
+    id: "2102333390313627910",
+    author: "WeGotitBack 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧🇺🇸",
+    handle: "@NotFarLeftAtAll",
+    content: "Excessive force or just the right amount of force",
+    likes: 1880,
+    reposts: 152,
+    views: 71092,
+    avatarUrl: "https://pbs.twimg.com/profile_images/1889657050629632000/Pxr-VZ9l_400x400.jpg",
+    tweetUrl: "https://x.com/NotFarLeftAtAll/status/2102333390313627910"
+  },
+  {
+    id: "2102867750385279412",
+    author: "TheEnglishPatriot",
+    handle: "@TheEnglishPat",
+    content: "Police turn up for two men with cameras outside a migrant hotel, but where are they when a home is broken into?",
+    likes: 760,
+    reposts: 269,
+    views: 31895,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2089326902355861504/4HaoTQ0u_400x400.jpg",
+    tweetUrl: "https://x.com/TheEnglishPat/status/2102867750385279412"
+  },
+  {
+    id: "2104883958961823791",
+    author: "Driftwood",
+    handle: "@buc97552",
+    content: "Henry Nowak’s murderer was never handcuffed, but 8 year old boys fishing without a valid permit are. \n\nPenny dropping yet?",
+    likes: 90969,
+    reposts: 19985,
+    views: 1876423,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2033994598561759233/uyHgffAk_400x400.jpg",
+    tweetUrl: "https://x.com/buc97552/status/2104883958961823791"
+  },
+  {
+    id: "2105022039388242100",
+    author: "WWG1WGA🇺🇸♥️",
+    handle: "@WWG1WGA_QQ",
+    content: "British police arrest two young children, one with special needs and the other with ADHD.",
+    likes: 1975,
+    reposts: 922,
+    views: 28790,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2037265333661130752/5hEh7IIO_400x400.jpg",
+    tweetUrl: "https://x.com/WWG1WGA_QQ/status/2105022039388242100"
+  },
+  {
+    id: "2106677050480210424",
+    author: "Sedd",
+    handle: "@SeddSezz",
+    content: "It took 15 officers to apprehend one knife-wielding weasel, and one pepper sprayed himself while another tripped.",
+    likes: 1389,
+    reposts: 493,
+    views: 39766,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2100337136973082625/oEkk9qyC_400x400.jpg",
+    tweetUrl: "https://x.com/SeddSezz/status/2106677050480210424"
+  },
+  {
+    id: "1718174862194225648",
+    author: "Ashlea Simon",
+    handle: "@AshleaSimonAFE",
+    content: "Officer down as several officers struggle to cuff one man in the Midlands. Just tase him and watch him drop 😡😡",
+    likes: 593,
+    reposts: 184,
+    views: 41830,
+    avatarUrl: "https://pbs.twimg.com/profile_images/2076045685720322048/6uZzJYPI_400x400.jpg",
+    tweetUrl: "https://x.com/AshleaSimonAFE/status/1718174862194225648"
   },
 ];
 const tiers = ['S', 'A', 'B', 'C', 'D', 'E', 'P'];
 const allTiers = [...tiers, 'DISCARD'];
 const defaultTier: Record<string, Tweet[]> = {
-  S: [initialTweets[0], initialTweets[1], initialTweets[2]],
+  S: [initialTweets[0], initialTweets[1], initialTweets[2], initialTweets[45]],
   A: [
     initialTweets[3], initialTweets[4], initialTweets[5], initialTweets[6], initialTweets[7],
     initialTweets[30], initialTweets[32], initialTweets[38],
+    initialTweets[49], initialTweets[50],
   ],
   B: [
     initialTweets[8], initialTweets[9], initialTweets[10], initialTweets[11], initialTweets[12],
     initialTweets[33], initialTweets[35], initialTweets[36],
+    initialTweets[39], initialTweets[41], initialTweets[46], initialTweets[48],
   ],
   C: [
     initialTweets[13], initialTweets[14], initialTweets[15], initialTweets[16], initialTweets[27],
     initialTweets[29], initialTweets[31],
+    initialTweets[40], initialTweets[51], initialTweets[52],
   ],
   D: [
     initialTweets[17], initialTweets[18], initialTweets[19], initialTweets[20], initialTweets[21],
     initialTweets[28], initialTweets[34], initialTweets[37],
+    initialTweets[44],
   ],
   E: [initialTweets[22], initialTweets[23], initialTweets[24], initialTweets[25], initialTweets[26]],
-  P: [],
+  P: [initialTweets[42], initialTweets[43], initialTweets[47]],
   DISCARD: [],
 };
 const defaultTitles: Record<string, string> = {
